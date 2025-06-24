@@ -48,7 +48,7 @@ class TestChineseZodiac(unittest.TestCase):
                          [1888, 1876, 1864, 1852, 1840, 1828, 1816, 1804, 1792, 1780])
         
 
-    def test_chinse_zodiac_future(self):
+    def test_chinese_zodiac_future(self):
         """Tests the ChineseZodiac.chinese_zodiac_future function."""
         # Exception raised if a year is not a positive integer
         self.assertRaises(TypeError, ChineseZodiac.chinese_zodiac, 2.3)
