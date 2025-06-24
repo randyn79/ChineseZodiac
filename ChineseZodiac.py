@@ -7,7 +7,7 @@ def chinese_zodiac(year: int) -> str:
 the corresponding year as a str."""
 
     # Check to see if the year is a positive integer.
-    if type(year) != int:
+    if not isinstance(year, int):
         raise TypeError('Input must be an integer')
     if year < 1:
         raise ValueError('Input must be greater than zero')
@@ -15,45 +15,31 @@ the corresponding year as a str."""
     signs = ('Monkey', 'Rooster', 'Dog', 'Pig', 'Rat', 'Ox',
              'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat')
 
-    sign = int(year % 12)
-
-    return signs[sign]
+    return signs[year % 12]
 
 def chinese_zodiac_prior(year: int) -> list:
     """Accepts a year as an int.  Returns the previous 10 years that the Chinese Zodiac
 would have the same sign (every 12 years) as a list."""
 
     # Check to see if the year is a positive integer.
-    if type(year) != int:
+    if not isinstance(year, int):
         raise TypeError('Input must be an integer')
     if year < 1:
         raise ValueError('Input must be greater than zero')
 
-    prior_years = []
-
-    for i in range(1,11):
-        year -= 12
-        prior_years.append(year)
-
-    return prior_years
+    return [(year - (12 * i)) for i in range(1, 11)]
 
 def chinese_zodiac_future(year: int) -> list:
     """Accepts a year as an int.  Returns the next 10 years that the Chinese Zodiac
 would have the same sign (every 12 years) as a list."""
 
     # Check to see if the year is a positive integer.
-    if type(year) != int:
+    if not isinstance(year, int):
         raise TypeError('Input must be an integer')
     if year < 1:
         raise ValueError('Input must be greater than zero')
 
-    future_years = []
-
-    for i in range(1,11):
-        year += 12
-        future_years.append(year)
-
-    return future_years
+    return [(year + (12 * i)) for i in range(1, 11)]
     
         
 if __name__ == "__main__":

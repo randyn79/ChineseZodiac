@@ -36,3 +36,6 @@ Unittests for the ChineseZodiac.chinese_zodiac_prior() function
 ### test_chinese_zodiac_future() function
 
 Unittests for the ChineseZodiac.chinese_zodiac_future() function
+
+### To Do
+Clean up test cases.
